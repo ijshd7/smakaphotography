@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import styled from 'styled-components';
 // import { Link } from 'gatsby';
+// https://css-tricks.com/hamburger-menu-with-a-side-of-react-hooks-and-styled-components/
+
 
 const theme = {
   primaryDark: '#0D0C1D',

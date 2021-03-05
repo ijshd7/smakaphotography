@@ -1,7 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import styled from 'styled-components';
+import { BurgerHook } from '../hooks/BurgerHook';
+import introImg from '../images/IMG_0004.jpg';
 // import { Link } from 'gatsby';
-// https://css-tricks.com/hamburger-menu-with-a-side-of-react-hooks-and-styled-components/
+
+const background = {
+  backgroundImage: `url(${introImg})`,
+  backgroundSize: 'cover',
+  backgroundPosition: 'center',
+  minHeight: '340px'
+};
 
 
 const theme = {
@@ -33,24 +41,24 @@ const StyledBurger = styled.button`
   div {
     width: 2rem;
     height: 0.25rem;
-    background: ${open => open ? theme.primaryDark : theme.primaryLight};
+    background: ${({ open }) => open ? theme.primaryDark : theme.primaryLight};
     border-radius: 10px;
     transition: all 0.3s linear;
     position: relative;
     transform-origin: 1px;
-  }
 
-  :first-child {
-    transform: ${open => open ? 'rotate(45deg)' : 'rotate(0)'};
-  }
+    :first-child {
+      transform: ${({ open }) => open ? 'rotate(45deg)' : 'rotate(0)'};
+    }
 
-  :nth-child(2) {
-    opacity: ${open => open ? '0' : '1'};
-    transform: ${open => open ? 'translateX(20px)' : 'translateX(0)'};
-  }
+    :nth-child(2) {
+      opacity: ${({ open }) => open ? '0' : '1'};
+      transform: ${({ open }) => open ? 'translateX(20px)' : 'translateX(0)'};
+    }
 
-  :nth-child(3) {
-    transform: ${open => open ? 'rotate(-45deg)' : 'rotate(0)'};
+    :nth-child(3) {
+      transform: ${({ open }) => open ? 'rotate(-45deg)' : 'rotate(0)'};
+    }
   }
 `;
 
@@ -66,7 +74,7 @@ const StyledMenu = styled.nav`
   top: 0;
   left: 0;
   transition: transform 0.3s ease-in-out;
-  transform: ${open => open ? 'translateX(0)' : 'translateX(-100%)'};
+  transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(-100%)'};
   
   @media (max-width: ${theme.mobile}) {
     width: 100%;
@@ -124,13 +132,15 @@ const Burger = ({ open, setOpen }) => {
 
 const IndexPage = () => {
   const [open, setOpen] = useState(false);
+  const node = useRef();
+  BurgerHook(node, () => setOpen(false));
   return (
-    <main className="h-screen w-full" style={{backgroundColor: '#0D0C1D'}}>
+    <main className="h-screen w-full" style={background}>
       <title>S. Maka Photography</title>
       <div>
-        <h1 className="text-center">Hello Friend.</h1>
+        <h1 className="text-center text-white">Hello Friend.</h1>
       </div>
-      <div>
+      <div ref={node}>
         <Burger open={open} setOpen={setOpen}/>
         <Menu open={open} setOpen={setOpen}/>
       </div>

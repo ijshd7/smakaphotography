@@ -8,6 +8,8 @@ const background = {
   backgroundImage: `url(${introImg})`,
   backgroundSize: 'cover',
   backgroundPosition: 'center',
+  backgroundAttachment: 'fixed',
+  backgroundRepeat: 'no-repeat',
   minHeight: '340px'
 };
 
@@ -136,7 +138,6 @@ const IndexPage = () => {
   BurgerHook(node, () => setOpen(false));
   return (
     <main className="h-screen w-full" style={background}>
-      <title>S. Maka Photography</title>
       <div>
         <h1 className="text-center text-white">Hello Friend.</h1>
       </div>

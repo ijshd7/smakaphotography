@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import styled from 'styled-components';
 import { BurgerHook } from '../hooks/BurgerHook';
 import introImg from '../images/IMG_0004.jpg';
-// import { Link } from 'gatsby';
+import { Link } from 'gatsby';
 
 const background = {
   backgroundImage: `url(${introImg})`,
@@ -73,6 +73,7 @@ const StyledMenu = styled.nav`
   text-align: left;
   padding: 2rem;
   position: absolute;
+  opacity: 0.25;
   top: 0;
   left: 0;
   transition: transform 0.3s ease-in-out;
@@ -106,18 +107,26 @@ const StyledMenu = styled.nav`
 const Menu = ({ open }) => {
   return (
     <StyledMenu open={open}>
-      <a href="/">
-        <span role="img" aria-label="about us">&#x1f481;&#x1f3fb;&#x200d;&#x2642;&#xfe0f;</span>
-        About us
-      </a>
-      <a href="/">
-        <span role="img" aria-label="price">&#x1f4b8;</span>
+      <Link to="/">
+        <span role="img" aria-label="home"></span>
+        Home
+      </Link>
+      <Link to="/">
+        <span role="img" aria-label="portfolio"></span>
+        Portfolio
+      </Link>
+      <Link to="/">
+        <span role="img" aria-label="pricing"></span>
         Pricing
-        </a>
-      <a href="/">
-        <span role="img" aria-label="contact">&#x1f4e9;</span>
+      </Link>
+      <Link to="/">
+        <span role="img" aria-label="schedule"></span>
+        Schedule
+      </Link>
+      <Link to="/">
+        <span role="img" aria-label="contact"></span>
         Contact
-        </a>
+      </Link>
     </StyledMenu>
   )
 }
@@ -137,14 +146,19 @@ const IndexPage = () => {
   const node = useRef();
   BurgerHook(node, () => setOpen(false));
   return (
-    <main className="h-screen w-full" style={background}>
-      <div>
-        <h1 className="text-center text-white">Hello Friend.</h1>
-      </div>
-      <div ref={node}>
-        <Burger open={open} setOpen={setOpen}/>
-        <Menu open={open} setOpen={setOpen}/>
-      </div>
+    <main>
+      <section className="h-screen w-full" style={background}>
+        <div>
+          <h1 className="text-center text-white">Hello Friend.</h1>
+        </div>
+        <div ref={node}>
+          <Burger open={open} setOpen={setOpen}/>
+          <Menu open={open} setOpen={setOpen}/>
+        </div>
+      </section>
+      <section className="h-screen w-full">
+
+      </section>
     </main>
   )
 }

@@ -3,6 +3,13 @@ import styled from 'styled-components';
 import logo from '../images/logo.png';
 import { Link } from 'gatsby';
 
+const theme = {
+  primaryDark: '#0D0C1D',
+  primaryLight: '#EFFFFA',
+  primaryHover: '#343078',
+  mobile: '576px',
+}
+
 const StyledMenu = styled.nav`
     display: flex;
     flex-direction: column;

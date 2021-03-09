@@ -1,6 +1,13 @@
 import React from "react";
 import styled from 'styled-components';
 
+const theme = {
+  primaryDark: '#0D0C1D',
+  primaryLight: '#EFFFFA',
+  primaryHover: '#343078',
+  mobile: '576px',
+}
+
 const StyledBurger = styled.button`
     position: absolute;
     top: 5%;

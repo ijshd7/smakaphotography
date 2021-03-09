@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react";
 import styled from 'styled-components';
 import { BurgerHook } from '../hooks/BurgerHook';
 import introImg from '../images/IMG_0004.jpg';
+import logo from '../images/logo.png';
 import { Link } from 'gatsby';
 
 const background = {
@@ -73,7 +74,7 @@ const StyledMenu = styled.nav`
   text-align: left;
   padding: 2rem;
   position: absolute;
-  opacity: 0.25;
+  opacity: 0.5;
   top: 0;
   left: 0;
   transition: transform 0.3s ease-in-out;
@@ -86,7 +87,7 @@ const StyledMenu = styled.nav`
   a {
     font-size: 2rem;
     text-transform: uppercase;
-    padding: 2rem 0;
+    padding: 1rem 0;
     font-weight: bold;
     letter-spacing: 0.5rem;
     color: ${theme.primaryDark};
@@ -107,6 +108,7 @@ const StyledMenu = styled.nav`
 const Menu = ({ open }) => {
   return (
     <StyledMenu open={open}>
+      <img className="" alt="logo" src={logo}/>
       <Link to="/">
         <span role="img" aria-label="home"></span>
         Home
@@ -146,19 +148,14 @@ const IndexPage = () => {
   const node = useRef();
   BurgerHook(node, () => setOpen(false));
   return (
-    <main>
-      <section className="h-screen w-full" style={background}>
-        <div>
-          <h1 className="text-center text-white">Hello Friend.</h1>
-        </div>
-        <div ref={node}>
-          <Burger open={open} setOpen={setOpen}/>
-          <Menu open={open} setOpen={setOpen}/>
-        </div>
-      </section>
-      <section className="h-screen w-full">
-
-      </section>
+    <main className="h-screen w-full" style={background}>
+      <div>
+        <h1 className="text-center text-white">Hello Friend.</h1>
+      </div>
+      <div ref={node}>
+        <Burger open={open} setOpen={setOpen}/>
+        <Menu open={open} setOpen={setOpen}/>
+      </div>
     </main>
   )
 }

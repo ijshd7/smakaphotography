@@ -5,5 +5,8 @@ module.exports = {
     url: "/",
     image: "images/logo.png",
   },
-  plugins: ["gatsby-plugin-styled-components", "gatsby-plugin-postcss"],
+  plugins: [
+    "gatsby-plugin-styled-components",
+    "gatsby-plugin-postcss",
+  ],
 };

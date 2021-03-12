@@ -58,19 +58,19 @@ const Menu = ({ open }) => {
           <span role="img" aria-label="home"></span>
           Home
         </Link>
-        <Link to="/">
+        <Link to="/portfolio/">
           <span role="img" aria-label="portfolio"></span>
           Portfolio
         </Link>
-        <Link to="/">
+        <Link to="/pricing/">
           <span role="img" aria-label="pricing"></span>
           Pricing
         </Link>
-        <Link to="/">
+        <Link to="/schedule/">
           <span role="img" aria-label="schedule"></span>
           Schedule
         </Link>
-        <Link to="/">
+        <Link to="/contact/">
           <span role="img" aria-label="contact"></span>
           Contact
         </Link>

@@ -12,7 +12,7 @@ const introBackground = {
 };
 
 const heroBackground = {
-  backgroundImage: `url(${heroImg})`,
+  background: `linear-gradient(rgba(0,0,0,.1), rgba(0,0,0,0.2)),url('${heroImg}')`,
   backgroundSize: 'cover',
   backgroundPosition: 'right',
   backgroundAttachment: 'fixed',

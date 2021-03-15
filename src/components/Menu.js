@@ -24,6 +24,7 @@ const StyledMenu = styled.nav`
     left: 0;
     transition: transform 0.3s ease-in-out;
     transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(-100%)'};
+    z-index: 10;
     
     @media (max-width: ${theme.mobile}) {
       width: 100%;
@@ -32,7 +33,7 @@ const StyledMenu = styled.nav`
     a {
       font-size: 2rem;
       text-transform: uppercase;
-      padding: 1rem 0;
+      padding: 0.5rem 0;
       font-weight: bold;
       letter-spacing: 0.5rem;
       color: ${theme.primaryDark};
@@ -53,7 +54,7 @@ const StyledMenu = styled.nav`
 const Menu = ({ open }) => {
     return (
       <StyledMenu open={open}>
-        <img className="" alt="logo" src={logo}/>
+        <img className="h-auto" alt="logo" src={logo}/>
         <Link to="/">
           <span role="img" aria-label="home"></span>
           Home

@@ -1,6 +1,7 @@
 import React from "react";
 import introImg from '../images/IMG_0004.jpg';
 import heroImg from '../images/IMG_0003-small.jpg';
+import aboutMe from '../images/aboutMe2.jpg'
 
 const introBackground = {
   backgroundImage: `url(${introImg})`,
@@ -55,6 +56,7 @@ const IndexPage = () => {
         </p>
       </section>
       <section className="">
+        <img className="" src={aboutMe} alt="about me"/>
         <h1 className="uppercase text-2xl text-center text-yellow-400 italic underline">About Me</h1>
         <p className="text-center mx-4 font-serif italic">
           Lorem ipsum dolor sit amet,

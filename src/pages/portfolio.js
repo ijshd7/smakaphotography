@@ -10,33 +10,35 @@ import slide5 from '../images/IMG_0005.jpg';
 
 const PortfolioPage = () => {
     return (
-        <section className="flex flex-col h-screen w-full">
-            <h1 className="text-center italic">Portfolio</h1>
-            <Slider
-                className="my-auto"
-                dots={false}
-                fade={true}
-                autoplay={true}
-                autoplaySpeed={4000}
-                speed={1500}
-                pauseOnHover={false}
-            >
-                <div className="">
-                    <img src={slide1} alt="slide 1"/>
-                </div>
-                <div className="">
-                    <img src={slide2} alt="slide 2"/>
-                </div>
-                <div className="">
-                    <img src={slide3} alt="slide 3"/>
-                </div>
-                <div className="">
-                    <img src={slide4} alt="slide 4"/>
-                </div>
-                <div className="">
-                    <img src={slide5} alt="slide 5"/>
-                </div>
-            </Slider>
+        <section className="flex flex-col h-screen w-full" style={{backgroundColor: '#222D44'}}>
+            <div className="my-40">
+                <h1 className="text-center italic text-white">Portfolio</h1>
+                <Slider
+                    className="my-auto"
+                    dots={false}
+                    fade={true}
+                    autoplay={true}
+                    autoplaySpeed={4000}
+                    speed={1500}
+                    pauseOnHover={false}
+                >
+                    <div className="">
+                        <img src={slide1} alt="slide 1"/>
+                    </div>
+                    <div className="">
+                        <img src={slide2} alt="slide 2"/>
+                    </div>
+                    <div className="">
+                        <img src={slide3} alt="slide 3"/>
+                    </div>
+                    <div className="">
+                        <img src={slide4} alt="slide 4"/>
+                    </div>
+                    <div className="">
+                        <img src={slide5} alt="slide 5"/>
+                    </div>
+                </Slider>
+            </div>
         </section>
     );
 }
